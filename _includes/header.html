@@ -14,6 +14,14 @@
 
     {% seo %}
 
+    {%- comment -%}
+    Detect if it's a post or a page by looking for page.id
+    {%- endcomment -%}
+
+    {%- unless page.id -%}
+    <meta property="og:type" content="website">
+    {%- endunless -%}
+
     {% include analytics.html %}
     {% include no-js.html %}
   </head>
